@@ -7,6 +7,10 @@ export class AppController {
 
   @Get()
   getHello(): string {
+  /**
+   * yorum satırı
+   * */
+
     return this.appService.getHello();
   }
 }
