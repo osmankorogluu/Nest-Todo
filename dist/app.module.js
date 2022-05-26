@@ -9,11 +9,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
+const todo_module_1 = require("./todo/todo.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [mongoose_1.MongooseModule.forRoot('mongodb://127.0.0.1/nest')],
+        imports: [mongoose_1.MongooseModule.forRoot('mongodb://127.0.0.1/nest'), todo_module_1.TodoModule],
     })
 ], AppModule);
 exports.AppModule = AppModule;

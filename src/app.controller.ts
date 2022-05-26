@@ -7,7 +7,7 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    // deneöe //
+   
     return this.appService.getHello();
   }
 }
