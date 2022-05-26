@@ -1,3 +1,4 @@
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import {
   Body,
   Controller,
@@ -11,9 +12,19 @@ import { CreateTodoDto } from './dto/create-todo.dto';
 import { UpdateTodoDto } from './dto/update-todo.dto';
 import { TodoService } from './todo.service';
 
+@ApiTags('User')
 @Controller('todos')
 export class TodoController {
-  constructor(private readonly service: TodoService) {}
+  constructor(private readonly service: TodoService) { }
+  @ApiResponse({
+    status: 200,
+    description: 'The record has been successfully created.'
+  })
+
+  @ApiResponse({
+    status: 500,
+    description: 'Forbidden.'
+  })
 
   @Get()
   async index() {
